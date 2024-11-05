@@ -13,12 +13,45 @@ namespace tringleVorm
         public double a;
         public double b;
         public double c;
+        public double H;
 
+        public Triangle() { }
         public Triangle(double A, double B, double C)
         {
             a = A;
             b = B;
             c = C;
+        }
+        public Triangle(double ha, double A)
+        {
+            H = ha;
+            a = A;
+        }
+
+        public string TriangleType
+        {
+            get
+            {
+                if (ExistTriangle)
+                {
+                    if (a == b && b == c)
+                    {
+                        return "Равносторонний";
+                    }
+                    else if (a == b || b == c || a == c)
+                    {
+                        return "Равнобедренный";
+                    }
+                    else
+                    {
+                        return "Разносторонний";
+                    }
+                }
+                else
+                {
+                    return "Не существует";
+                }
+            }
         }
 
         public string OutputA()
@@ -36,7 +69,9 @@ namespace tringleVorm
 
         public double Perimeter()
         {
-            return a + b + c;
+            double p = 0;
+            p = a + b + c;
+            return p;
         }
         public double Surface()
         {
