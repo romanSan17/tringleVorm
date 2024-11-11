@@ -24,11 +24,12 @@ namespace tringleVorm
 
         private void Run_button_Click(object sender, EventArgs e)
         {
-            double a,b,c;
+            double a, b, c;
             a = Convert.ToDouble(txtA.Text);
             b = Convert.ToDouble(txtB.Text);
             c = Convert.ToDouble(txtC.Text);
             Triangle triangle = new Triangle(a, b, c);
+            listView1.Items.Clear();
             listView1.Items.Add("side a");
             listView1.Items.Add("side b");
             listView1.Items.Add("side c");
@@ -44,6 +45,35 @@ namespace tringleVorm
             if (triangle.ExistTriangle) { listView1.Items[5].SubItems.Add("exist"); }
             else listView1.Items[5].SubItems.Add("not exist");
             listView1.Items[6].SubItems.Add(triangle.TriangleType);
+
+            string imagesPath = @"C:\Users\Gigabyte\Source\Repos\tringleVorm\tringleVorm\Pildid";
+
+            switch (triangle.TriangleType)
+            {
+                case "Võrdkülgne":
+                    pictureBox1.Image = Image.FromFile(Path.Combine(imagesPath, "triangle1.png"));
+                    break;
+
+                case "Võrdhaarane":
+                    pictureBox1.Image = Image.FromFile(Path.Combine(imagesPath, "triangle2.png"));
+                    break;
+
+                case "Mitmekülgne":
+                    pictureBox1.Image = Image.FromFile(Path.Combine(imagesPath, "triangle3.png"));
+                    break;
+
+                default:
+
+                    MessageBox.Show("triangle doesn't exist");
+                    break;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            form2.Show();
         }
     }
 }

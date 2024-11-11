@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             Run_button = new Button();
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -40,6 +39,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             Run_button.FlatAppearance.BorderSize = 7;
             Run_button.FlatStyle = FlatStyle.Flat;
             Run_button.Font = new Font("Yu Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 186);
-            Run_button.Location = new Point(502, 236);
+            Run_button.Location = new Point(298, 236);
             Run_button.Name = "Run_button";
             Run_button.Size = new Size(204, 113);
             Run_button.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.triangle1;
             pictureBox1.Location = new Point(502, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(204, 204);
@@ -137,11 +137,28 @@
             label3.TabIndex = 8;
             label3.Text = "side C";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.LightBlue;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderColor = Color.RoyalBlue;
+            button1.FlatAppearance.BorderSize = 7;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Yu Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 186);
+            button1.Location = new Point(546, 287);
+            button1.Name = "button1";
+            button1.Size = new Size(208, 59);
+            button1.TabIndex = 9;
+            button1.Text = "Form2->";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 361);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -171,5 +188,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button1;
     }
 }

@@ -36,20 +36,20 @@ namespace tringleVorm
                 {
                     if (a == b && b == c)
                     {
-                        return "Равносторонний";
+                        return "Võrdkülgne";
                     }
                     else if (a == b || b == c || a == c)
                     {
-                        return "Равнобедренный";
+                        return "Võrdhaarane";
                     }
                     else
                     {
-                        return "Разносторонний";
+                        return "Mitmekülgne";
                     }
                 }
                 else
                 {
-                    return "Не существует";
+                    return "triangle doesn't exist";
                 }
             }
         }
